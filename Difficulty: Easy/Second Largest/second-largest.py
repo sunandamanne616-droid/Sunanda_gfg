@@ -1,9 +1,12 @@
 class Solution:
     def getSecondLargest(self, arr):
-        # code here
-        arr.sort()
-        largest=arr[-1]
-        for i in range (len(arr)-1,-1,-1):
-            if arr[i]!=largest:
-                return arr[i]
-        return -1
+        first=-1
+        sec=-1
+        for i in arr:
+            if i>first:
+                first=i
+        for i in arr:
+            if i>sec and i!=first:
+                sec=i
+        return sec
+            
